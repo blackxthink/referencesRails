@@ -1,0 +1,11 @@
+<h1>Liste des joueurs</h1>
+
+<% @parties.each do |partie| %>
+    <%= link_to "Voir", "/partie/#{partie.id}"%>
+    
+    Partie ID: <%= partie.id %> <%= partie.joueur_1.fullname %>
+    <%if partie.joueur_2 %>
+        vs <%= partie.joueur_2.fullname %>
+    <%end%>   
+    <br />
+<% end %>
